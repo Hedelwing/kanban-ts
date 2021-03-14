@@ -13,4 +13,4 @@ Email: kuresutina@gmail.com
 
 Пароль: Wasd1234
 
-[Live](https://hedelwing.github.io)
+[Live](https://hedelwing.github.io/kanban-ts/)
