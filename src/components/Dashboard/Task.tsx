@@ -18,7 +18,10 @@ const styles = makeStyles<Theme, StylesProps>({
     expandMore: ({ expanded }) => ({
         transition: '.3s ease-in',
         transform: expanded ? 'rotate(-180deg)' : 'rotate(0)'
-    })
+    }),
+    details: {
+        wordBreak: 'break-word'
+    }
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
@@ -42,7 +45,7 @@ const Task: FC<Props> = memo(({ name, id, board, description, deleteTask, openMo
         }),
     }), [])
 
-    const { accordion, expandMore } = styles({ expanded, isDragging })
+    const { accordion, expandMore, details } = styles({ expanded, isDragging })
 
     return <Box pt={1}>
         <Accordion expanded={expanded} ref={drag} className={accordion}>
@@ -76,7 +79,7 @@ const Task: FC<Props> = memo(({ name, id, board, description, deleteTask, openMo
                     <ExpandMore className={expandMore} />
                 </IconButton>
             </AccordionSummary>
-            <AccordionDetails style={{ wordBreak: 'break-word' }}>
+            <AccordionDetails className={details}>
                 <Typography>{description}</Typography>
             </AccordionDetails>
         </Accordion>
